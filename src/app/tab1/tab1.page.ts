@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataMoviesService } from '../services/data-movies.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(private dataMovies: DataMoviesService) {}
+
+  ngOnInit(): void{
+    this.dataMovies.getDiscover();
+  }
 
 }
